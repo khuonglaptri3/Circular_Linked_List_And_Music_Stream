@@ -234,57 +234,67 @@ namespace Circular_Linked_List_And_Music_Stream
         public void QuickSort()
         {
             if (IsEmpty()) return;
-            head = QuickSortRecursive(head, head.Pprv);
+
+            QuickSort(head, head.Pprv);
         }
 
-        private Node QuickSortRecursive(Node start, Node end)
+        private void QuickSort(Node low, Node high)
         {
-            if (start == end || start == null || end == null)
-                return start;
-
-            Node pivotPrev = Partition(start, end, out Node newPivot);
-
-            if (pivotPrev != null)
-                QuickSortRecursive(start, pivotPrev);
-
-            if (newPivot != null && newPivot.Pnext != null)
-                QuickSortRecursive(newPivot.Pnext, end);
-
-            return head;
-        }
-
-        private Node Partition(Node start, Node end, out Node pivot)
-        {
-            pivot = end;
-            Node pivotPrev = null;
-            Node current = start;
-            Node tail = pivot.Pprv;
-
-            while (current != pivot)
+            if (low != null && high != null && low != high && low != high.Pnext)
             {
-                if (current.data.Id < pivot.data.Id)
+                Node pivot = Partition(low, high);
+
+                Node pivotPrev = pivot.Pprv;
+                Node pivotNext = pivot.Pnext;
+
+                // Nếu pivot là nút đầu danh sách
+                if (pivot == low)
                 {
-                    if (pivotPrev == null)
-                        pivotPrev = start;
-                    else
-                        pivotPrev = pivotPrev.Pnext;
+                    QuickSort(pivotNext, high);
                 }
+                // Nếu pivot là nút cuối danh sách
+                else if (pivot == high)
+                {
+                    QuickSort(low, pivotPrev);
+                }
+                // Nếu pivot nằm giữa
                 else
                 {
-                    Swap(current.data, pivot.data);
+                    QuickSort(low, pivotPrev);
+                    QuickSort(pivotNext, high);
                 }
+            }
+        }
 
-                current = current.Pnext;
+        private Node Partition(Node low, Node high)
+        {
+            int pivotValue = high.data.Id;
+            Node i = low.Pprv;
+
+            for (Node j = low; j != high; j = j.Pnext)
+            {
+                if (j.data.Id <= pivotValue) // Bao gồm cả giá trị bằng
+                {
+                    i = (i == null || i == high) ? low : i.Pnext;
+
+                    SwapData(i, j);
+                }
             }
 
-            return pivotPrev;
+            i = (i == null || i == high) ? low : i.Pnext;
+            SwapData(i, high);
+
+            return i;
         }
-        private void Swap(Song a, Song b)
+
+        private void SwapData(Node a, Node b)
         {
-            Song temp = a;
-            a = b;
-            b = temp;
+            Song temp = a.data;
+            a.data = b.data;
+            b.data = temp;
         }
+
+
         // Propose at least 3 operations on the list (Example: Merge two lists, remove all nodes satisfying a specific criteria) 
         // 1.  Merge two song lists
         public void Merge(Circular_Linked_List other)
@@ -327,11 +337,11 @@ namespace Circular_Linked_List_And_Music_Stream
         // 3. Reverse the list   
         public void Reverse()
         {
-            if (IsEmpty()) return;
+            if (Head == null) return;
 
-            Node current = head;
+            Node current = Head;
             Node prev = null;
-            Node next;
+            Node next = null;
 
             do
             {
@@ -340,10 +350,10 @@ namespace Circular_Linked_List_And_Music_Stream
                 current.Pprv = next;
                 prev = current;
                 current = next;
-            } while (current != head);
+            } while (current != Head);
 
-            head.Pprv = prev;
-            head = prev;
+            Head.Pnext = prev;
+            Head = prev;
         }
         // Creat the  Id of the song 
         public int CreateId()
@@ -366,16 +376,110 @@ namespace Circular_Linked_List_And_Music_Stream
         public List<Song> ToList()
         {
             List<Song> songs = new List<Song>();
-            if (IsEmpty()) return songs;
+            if (Head == null) return songs;
 
-            Node current = head;
+            Node current = Head;
             do
             {
                 songs.Add(current.data);
                 current = current.Pnext;
-            } while (current != head);
+            } while (current != Head);
 
             return songs;
         }
+        // 5. shuffle the song list. 
+        public void Shuffle()
+        {
+            if (IsEmpty()) return;
+
+            int count = 0;
+            Node current = head;
+            do
+            {
+                count++;
+                current = current.Pnext;
+            } while (current != head);
+
+            Node[] nodes = new Node[count];
+            current = head;
+            for (int i = 0; i < count; i++)
+            {
+                nodes[i] = current;
+                current = current.Pnext;
+            }
+
+            Random rand = new Random();
+            for (int i = count - 1; i > 0; i--)
+            {
+                int j = rand.Next(i + 1);
+
+                Song temp = nodes[i].data;
+                nodes[i].data = nodes[j].data;
+                nodes[j].data = temp;
+            }
+        }
+        // 6. Delete the song by Id  
+        public void DeleteById(int id)
+        {
+            if (Head == null) return;
+
+            Node current = Head;
+            Node previous = null;
+
+            do
+            {
+                if (current.data.Id == id)
+                {
+                    if (previous != null)
+                    {
+                        previous.Pnext = current.Pnext;
+                        current.Pnext.Pprv = previous;
+                    }
+                    else
+                    {
+                        // Deleting the head node
+                        if (current.Pnext == Head)
+                        {
+                            // Only one node in the list
+                            Head = null;
+                        }
+                        else
+                        {
+                            Head = current.Pnext;
+                            Head.Pprv = current.Pprv;
+                            current.Pprv.Pnext = Head;
+                        }
+                    }
+                    return;
+                }
+                previous = current;
+                current = current.Pnext;
+            } while (current != Head);
+        }
+        // 7. Search the song by Id  
+        public Song SearchById(int id)
+        {
+            if (IsEmpty())
+            {
+                return null;
+            }
+
+            Node current = head;
+
+            do
+            {
+                if (current.data.Id == id)
+                {
+                    return current.data;
+                }
+
+                current = current.Pnext;
+            } while (current != head);
+
+            return null;
+        }
+
+
+
     }
 }
