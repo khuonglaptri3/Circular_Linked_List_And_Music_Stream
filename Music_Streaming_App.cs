@@ -205,20 +205,49 @@ namespace Circular_Linked_List_And_Music_Stream
 
         private void SEARCH_Click(object sender, EventArgs e)
         {
-            int keyword = int.Parse(SEARCH.Text.Trim().ToLower());
-            List<Song> matchingNodes = new List<Song>(); 
-            matchingNodes.Add(playlist.SearchById(keyword));
+            string keyword = Idtx.Text.Trim();
 
-            if (matchingNodes.Count == 0)
+            // Check if the keyword is an integer (for ID search)
+            if (int.TryParse(keyword, out int id))
             {
-                MessageBox.Show("No matching song found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Song result = playlist.SearchById(id);
+                if (result != null)
+                {
+                    dataGridViewSongs.DataSource = new List<Song> { result };
+                    axWindowsMediaPlayer1.URL = result.FilePath;
+                    Song.Text = result.Title;   
+
+                }
+                else
+                {
+                    MessageBox.Show("No matching song found by ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                List<Song> matchingSongs = matchingNodes.Select(node => node.data).ToList();
-                dataGridViewSongs.DataSource = null;
-                dataGridViewSongs.DataSource = matchingSongs;
+                // Search by title
+                List<Node> matchingNodes = playlist.SearchByCriteria(song =>
+                    song.Title.IndexOf(keyword, StringComparison.OrdinalIgnoreCase) >= 0
+                );
+
+                if (matchingNodes.Count == 0)
+                {
+                    MessageBox.Show("No matching song found by title.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    List<Song> matchingSongs = matchingNodes.Select(node => node.data).ToList();
+                    dataGridViewSongs.DataSource = matchingSongs; 
+                    axWindowsMediaPlayer1.URL = matchingNodes[0].data.FilePath;
+                    Song.Text = matchingNodes[0].data.Title;
+
+                }
             }
+        }
+
+        private void CLEAR_Click(object sender, EventArgs e)
+        {
+          DisplaySongs();   
         }
     }
 }

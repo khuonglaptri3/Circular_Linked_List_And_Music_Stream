@@ -28,17 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Music_Streaming_App));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Addfile = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Delete = new Guna.UI2.WinForms.Guna2Button();
             this.idtxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.DELETE_SONG_BY_ID = new System.Windows.Forms.Label();
-            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.dataGridViewSongs = new Guna.UI2.WinForms.Guna2DataGridView();
             this.I = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,15 +51,17 @@
             this.REVERSE = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.SEARCH = new Guna.UI2.WinForms.Guna2Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.Idtx = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.SEARCH = new Guna.UI2.WinForms.Guna2Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.CLEAR = new Guna.UI2.WinForms.Guna2Button();
+            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSongs)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
             // 
             // Addfile
@@ -134,38 +135,28 @@
             this.DELETE_SONG_BY_ID.Text = "DELETE_SONG";
             this.DELETE_SONG_BY_ID.Click += new System.EventHandler(this.DELETE_SONG_BY_ID_Click);
             // 
-            // axWindowsMediaPlayer1
-            // 
-            this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(336, 230);
-            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
-            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(233, 48);
-            this.axWindowsMediaPlayer1.TabIndex = 1;
-            this.axWindowsMediaPlayer1.Enter += new System.EventHandler(this.axWindowsMediaPlayer1_Enter);
-            // 
             // dataGridViewSongs
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dataGridViewSongs.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewSongs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dataGridViewSongs.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewSongs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewSongs.ColumnHeadersHeight = 4;
             this.dataGridViewSongs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewSongs.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewSongs.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewSongs.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dataGridViewSongs.Location = new System.Drawing.Point(1, 40);
             this.dataGridViewSongs.Name = "dataGridViewSongs";
@@ -309,7 +300,7 @@
             this.SORT.Name = "SORT";
             this.SORT.Size = new System.Drawing.Size(105, 46);
             this.SORT.TabIndex = 18;
-            this.SORT.Text = "SORT BY ID";
+            this.SORT.Text = "SORT WITH ID";
             this.SORT.Click += new System.EventHandler(this.SORT_Click);
             // 
             // REVERSE
@@ -348,6 +339,24 @@
             this.panel3.Size = new System.Drawing.Size(350, 155);
             this.panel3.TabIndex = 21;
             // 
+            // Idtx
+            // 
+            this.Idtx.Font = new System.Drawing.Font("Microsoft YaHei", 11F, System.Drawing.FontStyle.Bold);
+            this.Idtx.Location = new System.Drawing.Point(104, 56);
+            this.Idtx.Name = "Idtx";
+            this.Idtx.Size = new System.Drawing.Size(243, 32);
+            this.Idtx.TabIndex = 22;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 11F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(15, 59);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 26);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "ID:";
+            // 
             // SEARCH
             // 
             this.SEARCH.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -371,31 +380,39 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(183, 26);
             this.label5.TabIndex = 9;
-            this.label5.Text = "SEARCH_WiTH_ID";
+            this.label5.Text = "SEARCH_WITH_ID";
             // 
-            // Idtx
+            // CLEAR
             // 
-            this.Idtx.Font = new System.Drawing.Font("Microsoft YaHei", 11F, System.Drawing.FontStyle.Bold);
-            this.Idtx.Location = new System.Drawing.Point(104, 56);
-            this.Idtx.Name = "Idtx";
-            this.Idtx.Size = new System.Drawing.Size(85, 32);
-            this.Idtx.TabIndex = 22;
+            this.CLEAR.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.CLEAR.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.CLEAR.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.CLEAR.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.CLEAR.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.CLEAR.ForeColor = System.Drawing.Color.White;
+            this.CLEAR.Location = new System.Drawing.Point(1184, 592);
+            this.CLEAR.Name = "CLEAR";
+            this.CLEAR.Size = new System.Drawing.Size(105, 46);
+            this.CLEAR.TabIndex = 22;
+            this.CLEAR.Text = "CLEAR";
+            this.CLEAR.Click += new System.EventHandler(this.CLEAR_Click);
             // 
-            // label4
+            // axWindowsMediaPlayer1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 11F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(15, 59);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 26);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "ID:";
+            this.axWindowsMediaPlayer1.Enabled = true;
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(336, 230);
+            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(233, 48);
+            this.axWindowsMediaPlayer1.TabIndex = 1;
+            this.axWindowsMediaPlayer1.Enter += new System.EventHandler(this.axWindowsMediaPlayer1_Enter);
             // 
             // Music_Streaming_App
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1301, 665);
+            this.Controls.Add(this.CLEAR);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.REVERSE);
@@ -416,11 +433,11 @@
             this.Load += new System.EventHandler(this.Music_Streaming_App_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSongs)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -451,5 +468,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox Idtx;
         private System.Windows.Forms.Label label4;
+        private Guna.UI2.WinForms.Guna2Button CLEAR;
     }
 }
