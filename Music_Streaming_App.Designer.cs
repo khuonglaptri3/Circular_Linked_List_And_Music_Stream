@@ -28,15 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Music_Streaming_App));
             this.Addfile = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Delete = new Guna.UI2.WinForms.Guna2Button();
             this.idtxt = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.DELETE_SONG_BY_ID = new System.Windows.Forms.Label();
             this.dataGridViewSongs = new Guna.UI2.WinForms.Guna2DataGridView();
             this.I = new System.Windows.Forms.Label();
@@ -81,7 +80,6 @@
             this.panel1.BackColor = System.Drawing.Color.IndianRed;
             this.panel1.Controls.Add(this.Delete);
             this.panel1.Controls.Add(this.idtxt);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.DELETE_SONG_BY_ID);
             this.panel1.Location = new System.Drawing.Point(12, 483);
             this.panel1.Name = "panel1";
@@ -107,22 +105,11 @@
             // idtxt
             // 
             this.idtxt.Font = new System.Drawing.Font("Microsoft YaHei", 11F, System.Drawing.FontStyle.Bold);
-            this.idtxt.Location = new System.Drawing.Point(62, 59);
+            this.idtxt.Location = new System.Drawing.Point(3, 59);
             this.idtxt.Name = "idtxt";
-            this.idtxt.Size = new System.Drawing.Size(85, 32);
+            this.idtxt.Size = new System.Drawing.Size(347, 32);
             this.idtxt.TabIndex = 11;
             this.idtxt.TextChanged += new System.EventHandler(this.idtxt_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 11F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(3, 62);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 26);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "ID :";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // DELETE_SONG_BY_ID
             // 
@@ -137,26 +124,26 @@
             // 
             // dataGridViewSongs
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dataGridViewSongs.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewSongs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dataGridViewSongs.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewSongs.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewSongs.ColumnHeadersHeight = 4;
             this.dataGridViewSongs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewSongs.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewSongs.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewSongs.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dataGridViewSongs.Location = new System.Drawing.Point(1, 40);
             this.dataGridViewSongs.Name = "dataGridViewSongs";
@@ -342,9 +329,9 @@
             // Idtx
             // 
             this.Idtx.Font = new System.Drawing.Font("Microsoft YaHei", 11F, System.Drawing.FontStyle.Bold);
-            this.Idtx.Location = new System.Drawing.Point(104, 56);
+            this.Idtx.Location = new System.Drawing.Point(8, 56);
             this.Idtx.Name = "Idtx";
-            this.Idtx.Size = new System.Drawing.Size(243, 32);
+            this.Idtx.Size = new System.Drawing.Size(339, 32);
             this.Idtx.TabIndex = 22;
             // 
             // label4
@@ -353,9 +340,8 @@
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 11F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(15, 59);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 26);
+            this.label4.Size = new System.Drawing.Size(0, 26);
             this.label4.TabIndex = 21;
-            this.label4.Text = "ID:";
             // 
             // SEARCH
             // 
@@ -378,9 +364,10 @@
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 11F, System.Drawing.FontStyle.Bold);
             this.label5.Location = new System.Drawing.Point(3, 10);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(183, 26);
+            this.label5.Size = new System.Drawing.Size(153, 26);
             this.label5.TabIndex = 9;
-            this.label5.Text = "SEARCH_WITH_ID";
+            this.label5.Text = "SEARCH_WITH";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // CLEAR
             // 
@@ -458,7 +445,6 @@
         private Guna.UI2.WinForms.Guna2Button Shuffle;
         private Guna.UI2.WinForms.Guna2Button SORT;
         private Guna.UI2.WinForms.Guna2Button REVERSE;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label DELETE_SONG_BY_ID;
         private System.Windows.Forms.TextBox idtxt;
         private Guna.UI2.WinForms.Guna2Button Delete;

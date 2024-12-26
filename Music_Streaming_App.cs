@@ -240,14 +240,18 @@ namespace Circular_Linked_List_And_Music_Stream
                     dataGridViewSongs.DataSource = matchingSongs; 
                     axWindowsMediaPlayer1.URL = matchingNodes[0].data.FilePath;
                     Song.Text = matchingNodes[0].data.Title;
-
+                    
                 }
             }
         }
-
         private void CLEAR_Click(object sender, EventArgs e)
         {
           DisplaySongs();   
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
